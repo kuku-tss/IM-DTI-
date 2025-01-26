@@ -1,0 +1,7 @@
+String database  蛋白质ID 蛋白质序列
+DrugBank
+PubCam 小分子ID 小分子Smiles(编码和解码的对应关系，类似于键值对)
+ChEMBL30
+https://www.uniprot.org/
+https://www.proteinatlas.org/人类蛋白质网址
+https://blog.csdn.net/xk6891/article/details/116380262这个smlies讲的很清楚

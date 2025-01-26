@@ -1,0 +1,61 @@
+# Logging and Paths
+wandb_proj: NoSigmoidTest # Weights and Biases project to log results to.
+wandb_save: True # Whether or not to log to Weights and Biases.
+log_file: ./logs/scratch_testing.log # Location of log file
+model_save_dir: ./best_models # Location to save best models
+data_cache_dir: /home/liujin/data/ConPLex-main/datasets # Location of downloaded data (use `conplex_dti download`)
+
+# Misc
+device: 2 # CUDA device to use for training
+replicate: 0 # Random seed
+verbosity: 3 # Verbosity level for logging
+
+# Task and Dataset
+task: biosnap # Benchmark task - one of "davis", "bindingdb", "biosnap", "biosnap_prot", "biosnap_mol", "dti_dg"
+contrastive_split: within # Train/test split for contrastive learning is between target classes or within target classes
+
+esm_target_featurizer: ESMFeaturizer
+pt50_target_featurizer: ProtT5XLUniref50Featurizer
+probert_target_featurizer: ProtBertFeaturizer
+
+# Model and Featurizers
+drug_featurizer: MorganFeaturizer # Featurizer for small molecule drug SMILES (see `conplex_dti.featurizer` documentation)
+target_featurizer: ESMFeaturizer # Featurizer for protein sequences (see `conplex_dti.featurizer` documentation)\ProtT5XLUniref50Featurizer\ESMFeaturizer\ProtBertFeaturizer
+model_architecture: SimpleCoembeddingNoSigmoid  # SimpleCoembeddingResnet  #SimpleCoembeddingNoSigmoid # Model architecture (see `conplex_dti.models` documentation)
+model_architecture2: SimpleCoembeddingResnet2
+model_architecture3: SimpleCoembeddingResnet3_no
+model_architecture3_d: SimpleCoembeddingResnet3_no_d
+latent_dimension: 1024 # Dimension of shared co-embedding space
+latent_distance: "Cosine" # Distance metric to use in learned co-embedding space
+
+# Training
+epochs: 10 # Number of epochs to train for
+esm_epochs: 10
+pt50_epochs: 30
+batch_size: 32 # Size of batch for binary data set
+contrastive_batch_size: 512 # Size of batch for contrastive data set
+shuffle: True # Whether to shuffle training data before batching
+shuffle_dti: False
+num_workers: 0 # Number of workers for PyTorch DataLoader
+every_n_val: 1 # How often to run validation during training (epochs)
+
+lr_t_mult: 2
+eta_min: 1e-6
+
+## Learning Rate
+lr: 1e-3 # Learning rate for binary training  1e-4
+lr_t0: 10 # With annealing, reset learning rate to initial value after this many epochs for binary traniing
+weight_decay: 1e-4 # 权重衰减（L2正则化）
+
+## Contrastive
+knowledge_distillation: True # Whether to use contrastive learning
+clr: 1e-5 # Learning rate for contrastive training
+clr_t0: 10 # With annealing, reset learning rate to initial value after this many epochs for contrastive training
+
+## Margin
+margin_fn: 'tanh_decay' # Margin annealing function to use for contrastive triplet distance loss
+margin_max: 0.25 # Maximum margin value
+margin_t0: 10 # With annealing, reset margin to initial value after this many epochs for contrastive training
+
+temperature: 2.0
+alpha: 0.7
