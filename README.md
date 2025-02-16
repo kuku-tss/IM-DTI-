@@ -32,4 +32,4 @@ python data_train.py --run-id TestRun --config /path/to/your/train.py/config/def
 Once you have the prediction outputs, utilize to_data.py to consolidate the training and output .txt files.
 
 8.Random Forest Training
-Following the extraction of predictions, you can proceed to train a Random Forest model using beiyes.py. For generating the final predictions, you may use either b_IM.py or predict_pred.py, where you can adjust the evaluation metrics as per your requirements.
+Following the extraction of predictions, you can proceed to train a Random Forest model using beiyes.py. For generating the final predictions, you may use predict_pred.py, where you can adjust the evaluation metrics as per your requirements.
