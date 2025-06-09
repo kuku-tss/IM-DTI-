@@ -17,19 +17,10 @@ Training
 ProBERT: 50 epochs
 ESM-1b: 10 epochs
 ProtT5-XL UniRef50: 30 epochs
-4.Command to Train the Model
-Run the following command to train the model, ensuring to replace the path to your train.py file accordingly:
-
-python train.py --run-id TestRun --config /path/to/your/train.py/config/default_config.yaml
-5.Prediction Output Extraction
-Upon successful training, you will need to extract the model's predictions using data_train.py and data_test.py. The outputs can be saved in .txt files for further analysis.
-
-6.Command to Extract Predictions
-Execute the following command, replacing the path to your train.py file as necessary:
-
-python data_train.py --run-id TestRun --config /path/to/your/train.py/config/default_config.yaml
-7.Integration of Outputs
-Once you have the prediction outputs, utilize to_data.py to consolidate the training and output .txt files.
-
-8.Random Forest Training
-Following the extraction of predictions, you can proceed to train a Random Forest model using beiyes.py. For generating the final predictions, you may use predict_pred.py, where you can adjust the evaluation metrics as per your requirements.
+ProBERT: 50 epochs ESM-1b: 10 epochs ProtT5-XL UniRef50: 30 epochs 
+4. Command to train the model Run the following command to train the model, which will give you the trained pt model file. Of course, before running, you need to set the epoch and ensure that the target_featurizer parameter you pass is the large model you need, accordingly replace the path of your train.py file: python train.py --run-id TestRun --config /path/to/your/train.py/config/default_config.yaml 
+5. Extracting prediction output After successful training, you need to use data_train.py and data_test.py to extract the predictions of the model. These two files use the trained pt file to predict and obtain its output for both the training set and the test set. All three large models trained as extractors need to go through these two files. The output can be saved as a .txt file for further analysis. 
+6. Command to extract predictions Execute the following command, replacing the path of your train.py file as needed: python data_train.py --run-id TestRun --config /path/to/your/train.py/config/default_config.yaml 
+7. Integration of outputs Once you have the prediction outputs, use to_data.py to integrate the training and output .txt files. 
+8. Random forest training After extracting the predictions, you can start training a random forest model using beiyes.py.
+9. After training the random forest, you can use the pridict_pred.py file to predict the final output. Welcome to use it, though the process may be a bit cumbersome, we will gradually improve it.
