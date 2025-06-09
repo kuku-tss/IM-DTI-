@@ -24,3 +24,4 @@ ProBERT: 50 epochs ESM-1b: 10 epochs ProtT5-XL UniRef50: 30 epochs
 7. Integration of outputs Once you have the prediction outputs, use to_data.py to integrate the training and output .txt files. 
 8. Random forest training After extracting the predictions, you can start training a random forest model using beiyes.py.
 9. After training the random forest, you can use the pridict_pred.py file to predict the final output. Welcome to use it, though the process may be a bit cumbersome, we will gradually improve it.
+There are some paths in the code that need to be changed to your own.
