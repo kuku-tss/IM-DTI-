@@ -1,4 +1,8 @@
 # IM-DTI-
+
 Integrated Model for Drug–Target Interaction Prediction Leveraging Multiple Protein Language Embeddings
-paper：https://github.com/kuku-tss/IM-dti
-Remember to quote
+
+
+The model is in the branch file, you can click the link to access it directly.
+
+paper：https://github.com/kuku-tss/IM-dti/
