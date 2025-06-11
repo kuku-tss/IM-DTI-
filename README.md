@@ -5,6 +5,7 @@ BioSnap
 BioSnap Protein
 BioSnap Molecule
 Dude
+The value of model_architecture in the default_config.yaml for these datasets is SimpleCoembeddingNoSigmoid; the value for the TDC dataset is SimpleCoembeddingResnet.
 Models
 2.We employ the following advanced models for training:
 
